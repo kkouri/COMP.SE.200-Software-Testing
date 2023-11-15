@@ -7,33 +7,23 @@ describe('eq', () => {
   it('should determine that objects are equal', () => {
     expect(eq(object, object)).toBe(true);
   });
-});
 
-describe('eq', () => {
   it('should determine that objects are not equal', () => {
     expect(eq(object, other)).toBe(false);
   });
-});
 
-describe('eq', () => {
   it('should determine that strings are equal', () => {
     expect(eq('a', 'a')).toBe(true);
   });
-});
 
-describe('eq', () => {
   it('should determine that values are not equal', () => {
     expect(eq('a', Object('a'))).toBe(false);
   });
-});
 
-describe('eq', () => {
   it('should determine that chars are not equal', () => {
     expect(eq('a', 'b')).toBe(false);
   });
-});
 
-describe('eq', () => {
   it('should determine that empty values are equal', () => {
     expect(eq(NaN, NaN)).toBe(true);
   });
