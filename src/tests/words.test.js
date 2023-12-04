@@ -9,7 +9,7 @@ describe('words', () => {
     ]);
   });
 
-  it('should split string and chaar in to words', () => {
+  it('should split string and char in to words', () => {
     expect(words('fred, barney, & pebbles', /[^, ]+/g)).toStrictEqual([
       'fred',
       'barney',
@@ -17,4 +17,13 @@ describe('words', () => {
       'pebbles',
     ]);
   });
+
+  it('should split nums in to words', () => {
+    expect(words('1, 2, & 3')).toStrictEqual([
+      '1',
+      '2',
+      '3',
+    ]);
+  });
+
 });
