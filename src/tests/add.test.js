@@ -1,5 +1,5 @@
 describe('add', () => {
-  describe('Accepted input types', () => {
+  describe('Valid inputs', () => {
     it('should add two positive integers', () => {
       expect(add(1, 2)).toEqual(3);
       expect(add(35, 15)).toEqual(50);
@@ -64,42 +64,42 @@ describe('add', () => {
     });
   });
 
-  describe('Wrong input types', () => {
+  describe('Invalid inputs', () => {
     it('Should not add undefined values', () => {
-      expect(add(undefined, undefined)).toThrowError(TypeError);
-      expect(add(undefined, 1)).toThrowError(TypeError);
-      expect(add(1, undefined)).toThrowError(TypeError);
+      expect(() => add(undefined, undefined)).toThrow(TypeError);
+      expect(() => add(undefined, 1)).toThrow(TypeError);
+      expect(() => add(1, undefined)).toThrow(TypeError);
     });
 
     it('Should not add null values', () => {
-      expect(add(null, null)).toThrowError(TypeError);
-      expect(add(null, 1)).toThrowError(TypeError);
-      expect(add(1, null)).toThrowError(TypeError);
+      expect(() => add(null, null)).toThrow(TypeError);
+      expect(() => add(null, 1)).toThrow(TypeError);
+      expect(() => add(1, null)).toThrow(TypeError);
     });
 
     it('Should not add NaN values', () => {
-      expect(add(NaN, NaN)).toThrowError(TypeError);
-      expect(add(NaN, 1)).toThrowError(TypeError);
-      expect(add(1, NaN)).toThrowError(TypeError);
+      expect(() => add(NaN, NaN)).toThrow(TypeError);
+      expect(() => add(NaN, 1)).toThrow(TypeError);
+      expect(() => add(1, NaN)).toThrow(TypeError);
     });
 
     it('Should not add string values', () => {
-      expect(add('1', '2')).toThrowError(TypeError);
-      expect(add('1', 2)).toThrowError(TypeError);
-      expect(add(1, '2')).toThrowError(TypeError);
+      expect(() => add('1', '2')).toThrow(TypeError);
+      expect(() => add('1', 2)).toThrow(TypeError);
+      expect(() => add(1, '2')).toThrow(TypeError);
     });
 
     it('Should not add array values', () => {
-      expect(add([1], [2])).toThrowError(TypeError);
-      expect(add([1], 2)).toThrowError(TypeError);
-      expect(add(1, [2])).toThrowError(TypeError);
+      expect(() => add([1], [2])).toThrow(TypeError);
+      expect(() => add([1], 2)).toThrow(TypeError);
+      expect(() => add(1, [2])).toThrow(TypeError);
 
-      expect(add([3, 5], [1, 5])).toThrowError(TypeError);
-      expect(add([3, 5], 1)).toThrowError(TypeError);
-      expect(add(1, [3, 5])).toThrowError(TypeError);
+      expect(() => add([3, 5], [1, 5])).toThrow(TypeError);
+      expect(() => add([3, 5], 1)).toThrow(TypeError);
+      expect(() => add(1, [3, 5])).toThrow(TypeError);
 
-      expect(add([3, 5], [1])).toThrowError(TypeError);
-      expect(add([3], [1, 5])).toThrowError(TypeError);
+      expect(() => add([3, 5], [1])).toThrow(TypeError);
+      expect(() => add([3], [1, 5])).toThrow(TypeError);
     });
   });
 });
