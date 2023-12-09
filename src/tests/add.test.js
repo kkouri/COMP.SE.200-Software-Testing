@@ -1,7 +1,7 @@
 import add from '../add';
 
 describe('add', () => {
-  describe('valid inputs', () => {
+  describe('valid input types', () => {
     it('should add two positive integers', () => {
       expect(add(1, 2)).toEqual(3);
       expect(add(35, 15)).toEqual(50);
@@ -66,7 +66,7 @@ describe('add', () => {
     });
   });
 
-  describe('invalid inputs', () => {
+  describe('invalid input types', () => {
     it('should throw TypeError when input is undefined', () => {
       expect(() => add(undefined, undefined)).toThrow(TypeError);
       expect(() => add(undefined, 1)).toThrow(TypeError);
