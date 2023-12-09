@@ -14,7 +14,7 @@ const dateArray = [
 ];
 
 describe('filter', () => {
-  describe('valid inputs', () => {
+  describe('valid input types', () => {
     it('should filter by comparing strings', () => {
       expect(filter(strArray, (value) => value > 'b')).toStrictEqual([
         'c',
@@ -96,7 +96,7 @@ describe('filter', () => {
     });
   });
 
-  describe('invalid inputs', () => {
+  describe('invalid input types', () => {
     it('should throw TypeError when array is undefined', () => {
       expect(() => filter(undefined, (value) => value)).toThrow(TypeError);
     });
