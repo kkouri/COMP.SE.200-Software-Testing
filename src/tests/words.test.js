@@ -1,7 +1,7 @@
 import words from '../words.js';
 
 describe('words', () => {
-  describe('valid inputs', () => {
+  describe('valid input types', () => {
     it('should split string in to words', () => {
       expect(words('fred, barney, & pebbles')).toStrictEqual([
         'fred',
@@ -36,7 +36,7 @@ describe('words', () => {
     });
   });
 
-  describe('invalid inputs', () => {
+  describe('invalid input types', () => {
     it('should throw TypeError when input is number', () => {
       expect(() => words(1)).toThrow(TypeError);
     });
