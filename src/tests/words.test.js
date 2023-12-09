@@ -2,7 +2,7 @@ import words from '../words.js';
 
 describe('words', () => {
   describe('valid input types', () => {
-    it('should split string in to words', () => {
+    it('should split a string in to words', () => {
       expect(words('fred, barney, & pebbles')).toStrictEqual([
         'fred',
         'barney',
@@ -10,7 +10,7 @@ describe('words', () => {
       ]);
     });
 
-    it('should split string and char in to words', () => {
+    it('should split a string and a char in to words', () => {
       expect(words('fred, barney, & pebbles', /[^, ]+/g)).toStrictEqual([
         'fred',
         'barney',
@@ -19,25 +19,25 @@ describe('words', () => {
       ]);
     });
 
-    it('should split nums in to words', () => {
+    it('should split number array in to words', () => {
       expect(words('1, 2, & 3')).toStrictEqual(['1', '2', '3']);
     });
 
-    it('should split empty string in to empty array', () => {
+    it('should split an empty string in to an empty array', () => {
       expect(words('')).toStrictEqual([]);
     });
 
-    it('should split string with only spaces in to empty array', () => {
+    it('should split a string with only spaces in to an empty array', () => {
       expect(words('   ')).toStrictEqual([]);
     });
 
-    it('should split string with only commas in to empty array', () => {
+    it('should split a string with only commas in to an empty array', () => {
       expect(words(',,,')).toStrictEqual([]);
     });
   });
 
   describe('invalid input types', () => {
-    it('should throw TypeError when input is number', () => {
+    it('should throw TypeError when input is a number', () => {
       expect(() => words(1)).toThrow(TypeError);
     });
 
@@ -49,11 +49,11 @@ describe('words', () => {
       expect(() => words(undefined)).toThrow(TypeError);
     });
 
-    it('should throw TypeError when input is array', () => {
+    it('should throw TypeError when input is an array', () => {
       expect(() => words([])).toThrow(TypeError);
     });
 
-    it('should throw TypeError when input is object', () => {
+    it('should throw TypeError when input is an object', () => {
       expect(() => words({})).toThrow(TypeError);
     });
   });
