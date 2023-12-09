@@ -11,7 +11,7 @@ function getLength(value) {
 }
 
 describe('map', () => {
-  describe('Valid cases', () => {
+  describe('valid input types', () => {
     it('should iterate array values with given function', () => {
       expect(map(testArray1, square)).toStrictEqual([1, 4, 9]);
       expect(map(testArray2, square)).toStrictEqual([16, 64]);
@@ -27,27 +27,58 @@ describe('map', () => {
       expect(map([], square)).toStrictEqual([]);
     });
 
-    it('should return empty array if array is null or undefined', () => {
+    it('should return empty array if array is null', () => {
       expect(map(null, square)).toStrictEqual([]);
+    });
+
+    it('should return empty array if array is undefined', () => {
       expect(map(undefined, square)).toStrictEqual([]);
     });
   });
 
-  describe('Invalid cases', () => {
-    it('should throw error if iteratee is not a function', () => {
-      expect(() => map(testArray1, 'square')).toThrow(TypeError);
-      expect(() => map(testArray1, 1)).toThrow(TypeError);
-      expect(() => map(testArray1, true)).toThrow(TypeError);
-      expect(() => map(testArray1, {})).toThrow(TypeError);
-      expect(() => map(testArray1, [])).toThrow(TypeError);
-      expect(() => map(testArray1, null)).toThrow(TypeError);
-      expect(() => map(testArray1, undefined)).toThrow(TypeError);
+  describe('invalid input types', () => {
+    it('should throw TypeError if array is a string', () => {
+      expect(() => map('foo', square)).toThrow(TypeError);
     });
 
-    it('should throw error if array is not an array', () => {
+    it('should throw TypeError if array is a number', () => {
       expect(() => map(1, square)).toThrow(TypeError);
+    });
+
+    it('should throw TypeError if array is a boolean', () => {
       expect(() => map(true, square)).toThrow(TypeError);
+    });
+
+    it('should throw TypeError if array is an object', () => {
       expect(() => map({}, square)).toThrow(TypeError);
+    });
+
+    it('should throw TypeError if iteratee is a string', () => {
+      expect(() => map(testArray1, 'square')).toThrow(TypeError);
+    });
+
+    it('should throw TypeError if iteratee is a number', () => {
+      expect(() => map(testArray1, 1)).toThrow(TypeError);
+    });
+
+    it('should throw TypeError if iteratee is a boolean', () => {
+      expect(() => map(testArray1, true)).toThrow(TypeError);
+    });
+
+    it('should throw TypeError if iteratee is an object', () => {
+      expect(() => map(testArray1, {})).toThrow(TypeError);
+    });
+
+    it('should throw TypeError if iteratee is an array', () => {
+      expect(() => map(testArray1, [])).toThrow(TypeError);
+    });
+
+    it('should throw TypeError if iteratee is null', () => {
+      expect(() => map(testArray1, null)).toThrow(TypeError);
+    });
+
+    it('should throw TypeError if iteratee is undefined', () => {
+      expect(() => map(testArray1, undefined)).toThrow(TypeError);
     });
   });
 });
