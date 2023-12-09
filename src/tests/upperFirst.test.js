@@ -1,7 +1,7 @@
 import upperFirst from '../upperFirst.js';
 
 describe('upperFirst', () => {
-  describe('valid inputs', () => {
+  describe('valid input types', () => {
     it('should convert first char of string to upper case', () => {
       expect(upperFirst('fred')).toBe('Fred');
     });
@@ -32,15 +32,18 @@ describe('upperFirst', () => {
     });
   });
 
-  describe('invalid inputs', () => {
+  describe('invalid input types', () => {
     it('should throw TypeError if input type is number', () => {
       expect(upperFirst(0)).toThrow(TypeError);
       expect(upperFirst(1234)).toThrow(TypeError);
       expect(upperFirst(1.234)).toThrow(TypeError);
     });
 
-    it('should throw TypeError if input type is nullish', () => {
+    it('should throw TypeError if input type is null', () => {
       expect(upperFirst(null)).toThrow(TypeError);
+    });
+
+    it('should throw TypeError if input type is undefined', () => {
       expect(upperFirst(undefined)).toThrow(TypeError);
     });
 
