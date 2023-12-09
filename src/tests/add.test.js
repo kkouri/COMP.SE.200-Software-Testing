@@ -1,5 +1,7 @@
+import add from '../add';
+
 describe('add', () => {
-  describe('Valid inputs', () => {
+  describe('valid inputs', () => {
     it('should add two positive integers', () => {
       expect(add(1, 2)).toEqual(3);
       expect(add(35, 15)).toEqual(50);
@@ -64,32 +66,32 @@ describe('add', () => {
     });
   });
 
-  describe('Invalid inputs', () => {
-    it('Should not add undefined values', () => {
+  describe('invalid inputs', () => {
+    it('should throw TypeError when input is undefined', () => {
       expect(() => add(undefined, undefined)).toThrow(TypeError);
       expect(() => add(undefined, 1)).toThrow(TypeError);
       expect(() => add(1, undefined)).toThrow(TypeError);
     });
 
-    it('Should not add null values', () => {
+    it('should throw TypeError when input is null', () => {
       expect(() => add(null, null)).toThrow(TypeError);
       expect(() => add(null, 1)).toThrow(TypeError);
       expect(() => add(1, null)).toThrow(TypeError);
     });
 
-    it('Should not add NaN values', () => {
+    it('should throw TypeError when input is NaN', () => {
       expect(() => add(NaN, NaN)).toThrow(TypeError);
       expect(() => add(NaN, 1)).toThrow(TypeError);
       expect(() => add(1, NaN)).toThrow(TypeError);
     });
 
-    it('Should not add string values', () => {
+    it('should throw TypeError when input is string', () => {
       expect(() => add('1', '2')).toThrow(TypeError);
       expect(() => add('1', 2)).toThrow(TypeError);
       expect(() => add(1, '2')).toThrow(TypeError);
     });
 
-    it('Should not add array values', () => {
+    it('should throw TypeError when input is array', () => {
       expect(() => add([1], [2])).toThrow(TypeError);
       expect(() => add([1], 2)).toThrow(TypeError);
       expect(() => add(1, [2])).toThrow(TypeError);
