@@ -21,6 +21,17 @@ The 10 selected functions that were tested are:
 - upperFirst.js
 - words.js
 
-Tests are located in folder `src/tests`
+Tests are located in folder `./src/tests`
 
 Coveralls code coverage score can be found at the top of this page
+
+## Running tests locally
+
+In terminal:
+
+- navigate to project root
+- run `npm install`
+- run `npm run test` to run tests locally
+- run `npm run test-coverage` to create a coverage report
+
+The coverage report can be found in `./coverage` folder. Find the file `./coverage/index.html` and open it in browser to see the coverage test results
