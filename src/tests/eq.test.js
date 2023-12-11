@@ -64,6 +64,11 @@ describe('eq', () => {
     expect(eq(objectA, objectA)).toBe(true);
   });
 
+  // This will not pass
+  it('should determine that object and string are not equal', () => {
+    expect(eq(stringA, Object('a'))).toBe(false);
+  });
+
   it('should determine that objects are not equal', () => {
     expect(eq(objectA, objectB)).toBe(false);
     expect(eq(objectA, objectC)).toBe(false);
